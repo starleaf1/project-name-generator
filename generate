@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+mapfile nouns < ./nouns.txt
+mapfile adjectives < ./adjectives.txt
+
+nounIndex=$RANDOM%$((${#nouns[@]}-1))
+
+adjectiveIndex=$RANDOM%$((${#adjectives[@]}-1))
+
+echo ${adjectives[$adjectiveIndex]} ${nouns[$nounIndex]}
