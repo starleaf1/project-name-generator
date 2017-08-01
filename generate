@@ -7,4 +7,7 @@ nounIndex=$RANDOM%$((${#nouns[@]}-1))
 
 adjectiveIndex=$RANDOM%$((${#adjectives[@]}-1))
 
-echo ${adjectives[$adjectiveIndex]} ${nouns[$nounIndex]}
+adjective="$(echo -e "${adjectives[$adjectiveIndex]}" | tr -d '[:space:]')"
+noun="$(echo -e "${nouns[$nounIndex]}" | tr -d '[:space:]')"
+
+echo $adjective-$noun
